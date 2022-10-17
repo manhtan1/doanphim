@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1F208382-2C62-4AC4-9EC5-747FB9E40187}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RapPhim2101</RootNamespace>
+    <AssemblyName>RapPhim2101</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44372</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.UserSecrets, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietHD.cs" />
+    <Compile Include="Models\ChiTietPhong.cs" />
+    <Compile Include="Models\DBContext.cs" />
+    <Compile Include="Models\DichVu.cs" />
+    <Compile Include="Models\DinhDangPhim.cs" />
+    <Compile Include="Models\Hoadon.cs" />
+    <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\LoaiVe.cs" />
+    <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\Phim.cs" />
+    <Compile Include="Models\PhongChieu.cs" />
+    <Compile Include="Models\TheLoaiPhim.cs" />
+    <Compile Include="Models\UuDai.cs" />
+    <Compile Include="Models\Ve.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\gozha-nav.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\aleo-bold.svg" />
+    <Content Include="fonts\aleo-bolditalic.svg" />
+    <Content Include="fonts\aleo-italic.svg" />
+    <Content Include="fonts\aleo-regular.svg" />
+    <Content Include="fonts\MuseoSans_500-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="img\ajax-loader.GIF" />
+    <Content Include="img\apple-store.svg" />
+    <Content Include="img\bg-image.jpg" />
+    <Content Include="img\bg-video.jpg" />
+    <Content Include="img\blanck.png" />
+    <Content Include="img\chuatecuanhungchiecnhan.jpg" />
+    <Content Include="img\close-open-menu-icon.png" />
+    <Content Include="img\components\arrow.svg" />
+    <Content Include="img\components\bg-movie.png" />
+    <Content Include="img\components\bg-time-hover.png" />
+    <Content Include="img\components\bg-time.png" />
+    <Content Include="img\components\bg-tooltip.png" />
+    <Content Include="img\components\checked.png" />
+    <Content Include="img\components\close.svg" />
+    <Content Include="img\components\corner-lb.png" />
+    <Content Include="img\components\corner-left.png" />
+    <Content Include="img\components\corner-lt.png" />
+    <Content Include="img\components\corner-rb.png" />
+    <Content Include="img\components\corner-right.png" />
+    <Content Include="img\components\corner-rt.png" />
+    <Content Include="img\components\cursor.png" />
+    <Content Include="img\components\line-marker.png" />
+    <Content Include="img\components\plus-minus-icon.png" />
+    <Content Include="img\components\price-pattern.jpg" />
+    <Content Include="img\components\scarf.png" />
+    <Content Include="img\components\sits_mobile.png" />
+    <Content Include="img\components\wave-danger.svg" />
+    <Content Include="img\components\wave-dark-sm.svg" />
+    <Content Include="img\components\wave-dark.svg" />
+    <Content Include="img\components\wave-hover.svg" />
+    <Content Include="img\components\wave-light-sm.svg" />
+    <Content Include="img\components\wave-light.svg" />
+    <Content Include="img\components\wave-main.svg" />
+    <Content Include="img\components\wave.svg" />
+    <Content Include="img\conan.jpg" />
+    <Content Include="img\culaoxacsong.jpg" />
+    <Content Include="img\doraemon.jpg" />
+    <Content Include="img\emvatrinhcongson.jpg" />
+    <Content Include="img\error.png" />
+    <Content Include="img\fast.jpg" />
+    <Content Include="img\godzila.jpg" />
+    <Content Include="img\google-play.svg" />
+    <Content Include="img\hinhnen.png" />
+    <Content Include="img\hinhphim.png" />
+    <Content Include="img\hinhthu.jpg" />
+    <Content Include="img\icons\actors.svg" />
+    <Content Include="img\icons\camera.svg" />
+    <Content Include="img\icons\comment.svg" />
+    <Content Include="img\icons\countrr.svg" />
+    <Content Include="img\icons\country.svg" />
+    <Content Include="img\icons\director.svg" />
+    <Content Include="img\icons\fave-hover.svg" />
+    <Content Include="img\icons\fave.svg" />
+    <Content Include="img\icons\film.svg" />
+    <Content Include="img\icons\fiml.svg" />
+    <Content Include="img\icons\gift-dark.svg" />
+    <Content Include="img\icons\gift-light.svg" />
+    <Content Include="img\icons\heart.svg" />
+    <Content Include="img\icons\left-arrow-danger.svg" />
+    <Content Include="img\icons\left-arrow-dark.svg" />
+    <Content Include="img\icons\left-arrow.svg" />
+    <Content Include="img\icons\location.svg" />
+    <Content Include="img\icons\mause.svg" />
+    <Content Include="img\icons\reply-hover.svg" />
+    <Content Include="img\icons\reply.svg" />
+    <Content Include="img\icons\retweet-hover.svg" />
+    <Content Include="img\icons\retweet.svg" />
+    <Content Include="img\icons\right-arrow-danger.svg" />
+    <Content Include="img\icons\right-arrow-dark.svg" />
+    <Content Include="img\icons\right-arrow.svg" />
+    <Content Include="img\icons\sm-left-arrow-hover.svg" />
+    <Content Include="img\icons\sm-left-arrow.svg" />
+    <Content Include="img\icons\sm-right-arrow-hover.svg" />
+    <Content Include="img\icons\sm-right-arrow.svg" />
+    <Content Include="img\icons\smile-dark.svg" />
+    <Content Include="img\icons\smile-light.svg" />
+    <Content Include="img\icons\snow-dark.svg" />
+    <Content Include="img\icons\snow-light.svg" />
+    <Content Include="img\icons\speech.svg" />
+    <Content Include="img\icons\stars-light.svg" />
+    <Content Include="img\icons\stars.svg" />
+    <Content Include="img\icons\stroke.svg" />
+    <Content Include="img\icons\users-dark.svg" />
+    <Content Include="img\icons\users-light.svg" />
+    <Content Include="img\icons\wizard-dark.svg" />
+    <Content Include="img\icons\wizard-light.svg" />
+    <Content Include="img\logo-dark.png" />
+    <Content Include="img\logo-lg.png" />
+    <Content Include="img\logo.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\logogif.gif" />
+    <Content Include="img\logogiff.gif" />
+    <Content Include="img\logohutech.png" />
+    <Content Include="img\maguong.jpg" />
+    <Content Include="img\maidettini.jpg" />
+    <Content Include="img\muoi.jpg" />
+    <Content Include="img\payment\pay1.png" />
+    <Content Include="img\payment\pay2.png" />
+    <Content Include="img\payment\pay3.png" />
+    <Content Include="img\payment\pay4.png" />
+    <Content Include="img\payment\pay5.png" />
+    <Content Include="img\payment\pay6.png" />
+    <Content Include="img\payment\pay7.png" />
+    <Content Include="img\phim.jpg" />
+    <Content Include="img\rapphim.png" />
+    <Content Include="img\rate\cancel-off.png" />
+    <Content Include="img\rate\cancel-on.png" />
+    <Content Include="img\rate\star-half.png" />
+    <Content Include="img\rate\star-off.png" />
+    <Content Include="img\rate\star-off.svg" />
+    <Content Include="img\rate\star-on.png" />
+    <Content Include="img\rate\star-on.svg" />
+    <Content Include="img\thienthanhomenh.jpg" />
+    <Content Include="img\tickets.png" />
+    <Content Include="img\trungso.jpg" />
+    <Content Include="img\windows-store.svg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\aleo-bold.eot" />
+    <Content Include="fonts\aleo-bold.ttf" />
+    <Content Include="fonts\aleo-bold.woff" />
+    <Content Include="fonts\aleo-bolditalic.eot" />
+    <Content Include="fonts\aleo-bolditalic.ttf" />
+    <Content Include="fonts\aleo-bolditalic.woff" />
+    <Content Include="fonts\aleo-italic.eot" />
+    <Content Include="fonts\aleo-italic.ttf" />
+    <Content Include="fonts\aleo-italic.woff" />
+    <Content Include="fonts\aleo-regular.eot" />
+    <Content Include="fonts\aleo-regular.ttf" />
+    <Content Include="fonts\aleo-regular.woff" />
+    <Content Include="fonts\MuseoSans_500-webfont.eot" />
+    <Content Include="fonts\MuseoSans_500-webfont.ttf" />
+    <Content Include="fonts\MuseoSans_500-webfont.woff" />
+    <Content Include="libman.json" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="traller\bongdungtrungso.mp4" />
+    <Content Include="traller\conan.mp4" />
+    <Content Include="traller\culaoxacsong.mp4" />
+    <Content Include="traller\doraemon.mp4" />
+    <Content Include="traller\emvaTrinhCongSon.mp4" />
+    <Content Include="traller\fast.mp4" />
+    <Content Include="traller\Godzilla.mp4" />
+    <Content Include="traller\MaGuong.mp4" />
+    <Content Include="traller\maidettini.mp4" />
+    <Content Include="traller\muoi.mp4" />
+    <Content Include="traller\nghiatinhhuynhde.mp4" />
+    <Content Include="traller\ThienTHanhomenh.mp4" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\phimsapchieu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="img\banners\" />
+    <Folder Include="img\cinema\" />
+    <Folder Include="img\client-photo\" />
+    <Folder Include="img\comment\" />
+    <Folder Include="img\gallery\large\" />
+    <Folder Include="img\gallery\thumb\" />
+    <Folder Include="img\movie\" />
+    <Folder Include="img\new\" />
+    <Folder Include="img\slides\" />
+    <Folder Include="img\trailers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63036</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44372/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

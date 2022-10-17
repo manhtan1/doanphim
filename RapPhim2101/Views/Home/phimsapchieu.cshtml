@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "phimsapchieu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    RapPhim2101.Models.DBContext db = new RapPhim2101.Models.DBContext();
+    var theloai = db.TheLoaiPhims.ToList();
+    var phimmoi = db.Phims.ToList();
+    var topphim = db.Phims.OrderByDescending(a => a.ThoigianChieu < DateTime.Now).Take(6).ToList();
+}
+<div class="col-sm-12">
+    <div class="row">
+        <div class="col-sm-8 col-md-9">
+            @{
+                int so = 1;
+            }
+            @foreach (var i in Model)
+            {
+
+                if ((so == 1 || so == 4 || so == 5))
+                {
+                    <div class="movie movie--test movie--test--dark movie--test--left">
+                        <div class="movie__images">
+                            <a href="movie-page-left.html" class="movie-beta__link">
+                                <img class="film-traller" alt='' src="@i.hinhtraller" />
+                            </a>
+                        </div>
+                        <div class="movie__info">
+                            <a href='movie-page-left.html' class="movie__title">@i.TenPhim  </a>
+
+                            <p class="movie__time">@i.thoiluong</p>
+                            @foreach (var tl in theloai)
+                            {
+                                if (tl.MaLP == i.MaLP)
+                                {
+                                    <p class="movie__option">Thể Loại: @tl.LoaiPhim</p>
+
+                                }
+
+                            }
+
+                            <div class="movie__rate">
+                                <div class="score"></div>
+                                <span class="movie__rating">4.1</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="movie movie--test movie--test--light movie--test--left">
+                        <div class="movie__images">
+                            <a href="movie-page-left.html" class="movie-beta__link">
+                                <img class="film-traller" alt='' src="@i.hinhtraller" />
+                            </a>
+                        </div>
+                        <div class="movie__info">
+                            <a href='movie-page-left.html' class="movie__title">@i.TenPhim  </a>
+
+                            <p class="movie__time">@i.thoiluong</p>
+                            @foreach (var tl in theloai)
+                            {
+                                if (tl.MaLP == i.MaLP)
+                                {
+                                    <p class="movie__option">Thể Loại: @tl.LoaiPhim</p>
+
+                                }
+
+                            }
+
+                            <div class="movie__rate">
+                                <div class="score"></div>
+                                <span class="movie__rating">4.1</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+                so++;
+            }
+        </div>
+    </div>
+</div>
+

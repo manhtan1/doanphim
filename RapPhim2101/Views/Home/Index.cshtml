@@ -1,0 +1,299 @@
+﻿@using RapPhim2101.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<Phim>
+@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    div.movie .movie--test,
+    img.film-traller {
+        height: 200px;
+    }
+    img.film-traller {
+       width:100%;
+    }
+    .MenuTrang {
+        display:inline-block;
+        margin-top:15px;
+    }
+        .MenuTrang li {
+            display: inline;
+            padding: 4px 5px;
+            background: #e7cccc;
+        }
+    .hinhtraller {
+       width: 70px;
+    }
+</style>
+
+@*<div class="bannercontainer">
+    <div class="banner">
+        <img alt='' src="~/img/rapphim.png" />
+    </div>
+</div>*@
+@*<div class="bgleft">
+        <img alt='' src="~/img/logogiff.gif" />
+    </div>*@
+
+<section class="container">
+    <div class="movie-best">
+        <div class="col-sm-10 col-sm-offset-1 movie-best__rating">Today Best choice</div>
+        <div class="col-sm-12 change--col">
+            @{
+                RapPhim2101.Models.DBContext db = new RapPhim2101.Models.DBContext();
+                var theloai = db.TheLoaiPhims.ToList();
+                var phimmoi = db.Phims.ToList();
+                var topphim = db.Phims.OrderByDescending(a => a.ThoigianChieu<DateTime.Now).Take(6).ToList();
+            }
+            @foreach (var item in topphim)
+            {
+
+                <div class="movie-beta__item ">
+                    <img alt='' src="@item.hinhtraller" />
+                    <span class="best-rate">5.0</span>
+                    @foreach (var i in theloai)
+                    {
+                        if (@item.MaLP == @i.MaLP)
+                        {
+                            <ul class="movie-beta__info">
+
+                                <li><span class="best-voted">@item.TenPhim</span></li>
+                                <li>
+                                    <p class="movie__time">@item.thoiluong</p>
+                                    <p>@i.LoaiPhim </p>
+                                    <p>@item.QuocGia</p>
+                                </li>
+                                <li class="last-block">
+                                    <a href="movie-page-left.html" class="slide__link">more</a>
+                                </li>
+                            </ul>
+                        }
+
+                    }
+
+                </div>
+            }
+        </div>
+        <div class="col-sm-10 col-sm-offset-1 movie-best__check">check all movies now playing</div>
+    </div>
+    <div class="clearfix"></div>
+
+    <h2 id='target' class="page-heading heading--outcontainer">Now in the cinema</h2>
+
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-8 col-md-9">
+                @{
+                    int so = 1;
+                }
+                @foreach (var i in Model)
+                {
+                    
+                    if ((so ==1 || so==4 || so==5) )
+                    {
+                        <div class="movie movie--test movie--test--dark movie--test--left">
+                            <div class="movie__images">
+                                <a href="movie-page-left.html" class="movie-beta__link">
+                                    <img class="film-traller" alt='' src="@i.hinhtraller" />
+                                </a>
+                            </div>
+                            <div class="movie__info">
+                                <a href='movie-page-left.html' class="movie__title">@i.TenPhim  </a>
+
+                                <p class="movie__time">@i.thoiluong</p>
+                                @foreach (var tl in theloai)
+                                {
+                                    if (tl.MaLP == i.MaLP)
+                                    {
+                                        <p class="movie__option">Thể Loại: @tl.LoaiPhim</p>
+
+                                    }
+
+                                }
+
+                                <div class="movie__rate">
+                                    <div class="score"></div>
+                                    <span class="movie__rating">4.1</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="movie movie--test movie--test--light movie--test--left">
+                            <div class="movie__images">
+                                <a href="movie-page-left.html" class="movie-beta__link">
+                                    <img class="film-traller" alt='' src="@i.hinhtraller" />
+                                </a>
+                            </div>
+                            <div class="movie__info">
+                                <a href='movie-page-left.html' class="movie__title">@i.TenPhim  </a>
+
+                                <p class="movie__time">@i.thoiluong</p>
+                                @foreach (var tl in theloai)
+                                {
+                                    if (tl.MaLP == i.MaLP)
+                                    {
+                                        <p class="movie__option">Thể Loại: @tl.LoaiPhim</p>
+
+                                    }
+
+                                }
+
+                                <div class="movie__rate">
+                                    <div class="score"></div>
+                                    <span class="movie__rating">4.1</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    so++;
+                }
+            </div>
+            <aside class="col-sm-4 col-md-3">
+                <div class="sitebar first-banner--left">
+                    <div class="promo marginb-sm">
+                        <div class="promo__head">Phim sắp chiếu</div>
+                        <div class="promo__describe">for all smartphone and tablets</div>
+                        <div class="promo__content">
+                            <ul>
+                                @foreach (var i in phimmoi)
+                                {
+                                    if(@i.ThoigianChieu> DateTime.Now)
+                                    {
+                                        <li class="movie  store-variant">
+                                            <a href="#">
+                                                <div class="desc_movie">
+                                                    <img class="hinhtraller" alt='banner' src="@i.hinhtraller" />
+                                                    <div class="movie_watch">
+                                                        <span>@i.TenPhim</span>
+                                                        <p>@i.ThoigianChieu</p>
+                                                      @*  <span class="movie__rating_watch">4.1</span>*@
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    }
+                                    
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </aside>
+        </div>
+    </div>
+    <div class="MenuTrang">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+   @* <div class="col-sm-12">
+        <h2 class="page-heading">Phim Yêu Thích</h2>
+
+        <div class="col-sm-4 similar-wrap col--remove">
+            <div class="post post--preview post--preview--wide">
+                <div class="post__image">
+                    <img alt='banner' src={phim} />
+                    <div class="social social--position social--hide">
+                        <span class="social__name">Share:</span>
+                        <a href='#' class="social__variant social--first fa fa-facebook"></a>
+                        <a href='#' class="social__variant social--second fa fa-twitter"></a>
+                        <a href='#' class="social__variant social--third fa fa-vk"></a>
+                    </div>
+                </div>
+                <p class="post__date">22 October 2013 </p>
+                <a href="single-page-left.html" class="post__title">"Thor: The Dark World" - World Premiere</a>
+                <a href="single-page-left.html" class="btn read-more post--btn">read more</a>
+            </div>
+        </div>
+        <div class="col-sm-4 similar-wrap col--remove">
+            <div class="post post--preview post--preview--wide">
+                <div class="post__image">
+                    <img alt='banner' src={phim} />
+
+                    <div class="social social--position social--hide">
+                        <span class="social__name">Share:</span>
+                        <a href='#' class="social__variant social--first fa fa-facebook"></a>
+                        <a href='#' class="social__variant social--second fa fa-twitter"></a>
+                        <a href='#' class="social__variant social--third fa fa-vk"></a>
+                    </div>
+                </div>
+                <p class="post__date">22 October 2013 </p>
+                <a href="single-page-left.html" class="post__title">30th Annual Night Of Stars Presented By The Fashion Group International</a>
+                <a href="single-page-left.html" class="btn read-more post--btn">read more</a>
+            </div>
+        </div>
+        <div class="col-sm-4 similar-wrap col--remove">
+            <div class="post post--preview post--preview--wide">
+                <div class="post__image">
+                    <img alt='banner' src={phim} />
+
+                    <div class="social social--position social--hide">
+                        <span class="social__name">Share:</span>
+                        <a href='#' class="social__variant social--first fa fa-facebook"></a>
+                        <a href='#' class="social__variant social--second fa fa-twitter"></a>
+                        <a href='#' class="social__variant social--third fa fa-vk"></a>
+                    </div>
+                </div>
+                <p class="post__date">22 October 2013 </p>
+                <a href="single-page-left.html" class="post__title">Hollywood Film Awards 2013</a>
+                <a href="single-page-left.html" class="btn read-more post--btn">read more</a>
+            </div>
+        </div>
+    </div>*@
+    <div class="mg50px col-sm-12">
+        <h2 class="page-heading">Latest news</h2>
+
+        <div class="col-sm-4 similar-wrap col--remove">
+            <div class="post post--preview post--preview--wide">
+                <div class="post__image">
+                    <img alt='banner' src={phim} />
+                    <div class="social social--position social--hide">
+                        <span class="social__name">Share:</span>
+                        <a href='#' class="social__variant social--first fa fa-facebook"></a>
+                        <a href='#' class="social__variant social--second fa fa-twitter"></a>
+                        <a href='#' class="social__variant social--third fa fa-vk"></a>
+                    </div>
+                </div>
+                <p class="post__date">22 October 2013 </p>
+                <a href="single-page-left.html" class="post__title">"Thor: The Dark World" - World Premiere</a>
+                <a href="single-page-left.html" class="btn read-more post--btn">read more</a>
+            </div>
+        </div>
+        <div class="col-sm-4 similar-wrap col--remove">
+            <div class="post post--preview post--preview--wide">
+                <div class="post__image">
+                    <img alt='banner' src={phim} />
+
+                    <div class="social social--position social--hide">
+                        <span class="social__name">Share:</span>
+                        <a href='#' class="social__variant social--first fa fa-facebook"></a>
+                        <a href='#' class="social__variant social--second fa fa-twitter"></a>
+                        <a href='#' class="social__variant social--third fa fa-vk"></a>
+                    </div>
+                </div>
+                <p class="post__date">22 October 2013 </p>
+                <a href="single-page-left.html" class="post__title">30th Annual Night Of Stars Presented By The Fashion Group International</a>
+                <a href="single-page-left.html" class="btn read-more post--btn">read more</a>
+            </div>
+        </div>
+        <div class="col-sm-4 similar-wrap col--remove">
+            <div class="post post--preview post--preview--wide">
+                <div class="post__image">
+                    <img alt='banner' src={phim} />
+
+                    <div class="social social--position social--hide">
+                        <span class="social__name">Share:</span>
+                        <a href='#' class="social__variant social--first fa fa-facebook"></a>
+                        <a href='#' class="social__variant social--second fa fa-twitter"></a>
+                        <a href='#' class="social__variant social--third fa fa-vk"></a>
+                    </div>
+                </div>
+                <p class="post__date">22 October 2013 </p>
+                <a href="single-page-left.html" class="post__title">Hollywood Film Awards 2013</a>
+                <a href="single-page-left.html" class="btn read-more post--btn">read more</a>
+            </div>
+        </div>
+    </div>
+
+</section> 
