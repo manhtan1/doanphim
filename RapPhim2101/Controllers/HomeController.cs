@@ -17,6 +17,7 @@ namespace RapPhim2101.Controllers
             int pageNum = (page ?? 1);
             return View(db.Phims.OrderByDescending(n=>n.ThoigianChieu<DateTime.Now).ToList().ToPagedList(pageNum,pageSize));
         }
+          
 
         public ActionResult About()
         {
