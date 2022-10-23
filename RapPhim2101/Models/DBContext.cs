@@ -22,6 +22,7 @@ namespace RapPhim2101.Models
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Phim> Phims { get; set; }
         public virtual DbSet<PhongChieu> PhongChieux { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TheLoaiPhim> TheLoaiPhims { get; set; }
         public virtual DbSet<UuDai> UuDais { get; set; }
         public virtual DbSet<Ve> Ves { get; set; }

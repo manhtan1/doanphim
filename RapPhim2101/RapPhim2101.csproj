@@ -144,6 +144,7 @@
     <Compile Include="Areas\Admin\Code\SessionHelper.cs" />
     <Compile Include="Areas\Admin\Code\UserSessions.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\KhachHangsController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhanViensController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
@@ -160,9 +161,11 @@
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\LoaiVe.cs" />
     <Compile Include="Models\LoginAdmin.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\NhanVien.cs" />
     <Compile Include="Models\Phim.cs" />
     <Compile Include="Models\PhongChieu.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\TheLoaiPhim.cs" />
     <Compile Include="Models\UuDai.cs" />
     <Compile Include="Models\Ve.cs" />
@@ -1853,8 +1856,14 @@
     <Content Include="Assets\Admin\vendor\jquery\jquery.min.js" />
     <Content Include="Assets\Admin\vendor\jquery\jquery.slim.js" />
     <Content Include="Assets\Admin\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\font-awesome.css" />
     <Content Include="Content\gozha-nav.css" />
+    <Content Include="Content\login.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\responsive.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\aleo-bold.svg" />
@@ -2178,6 +2187,11 @@
     <Content Include="Areas\Admin\Views\NhanViens\Details.cshtml" />
     <Content Include="Areas\Admin\Views\NhanViens\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\NhanViens\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHangs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHangs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHangs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHangs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHangs\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2216,6 +2230,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\phimsapchieu.cshtml" />
+    <Content Include="Views\Home\DangKy.cshtml" />
+    <Content Include="Views\Home\Dangnhap.cshtml" />
+    <Content Include="Views\Home\ChitietPhim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

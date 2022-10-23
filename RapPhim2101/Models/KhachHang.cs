@@ -16,7 +16,6 @@ namespace RapPhim2101.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaKH { get; set; }
 
         [StringLength(250)]
@@ -29,6 +28,14 @@ namespace RapPhim2101.Models
         public string DiaChi { get; set; }
 
         public DateTime? NgaySinh { get; set; }
+
+        [Required]
+        [StringLength(250)]
+        public string matkhau { get; set; }
+
+        [Required]
+        [StringLength(250)]
+        public string taikhoan { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hoadon> Hoadons { get; set; }

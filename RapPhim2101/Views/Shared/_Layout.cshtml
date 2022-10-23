@@ -6,9 +6,16 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @*    @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")*@
-    <link href="~/Content/style.css" rel="stylesheet" />
-    <link href="~/Content/gozha-nav.css" rel="stylesheet" />
     
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/gozha-nav.css" rel="stylesheet" />
+    <link href="~/Content/login.css" rel="stylesheet" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <link href="~/Content/responsive.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
     <!-- Roboto -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
@@ -88,14 +95,29 @@
 
                 <div class="control-panel">
                     <div class="auth auth--home">
-                        <div class="auth__show">
-                            <span class="auth__image">
-                                <img src="~/img/logohutech.png" alt="logo" />
-                            </span>
-                        </div>
-                        <a href="#" class="btn btn--sign btn--singin">
-                            Đăng nhập
-                        </a>
+
+                        @{
+                            var session = (RapPhim2101.Models.KhachHang)Session["TaiKhoan"];
+                        }
+
+                        @if (session == null)
+                        {
+                            <a href="/Home/DangKy" class="btn btn--sign btn--singin">
+                                Đăng nhập
+                            </a>
+                        }
+                        else
+                        {
+                            <div class="auth__show">
+                                <span class="auth__image">
+                                    <img src="~/img/logohutech.png" alt="logo" />
+                                </span>
+                            </div>
+                            <a href="/Home/DangKy" class="btn btn--sign btn--singin">
+                                @session.TenKH
+                            </a>
+                        }
+
                         <ul class="auth__function">
                             <li><a href="#" class="auth__function-item">Watchlist</a></li>
                             <li><a href="#" class="auth__function-item">Booked tickets</a></li>
