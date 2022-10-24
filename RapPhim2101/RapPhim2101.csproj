@@ -147,6 +147,7 @@
     <Compile Include="Areas\Admin\Controllers\KhachHangsController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhanViensController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PhimsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2192,6 +2193,11 @@
     <Content Include="Areas\Admin\Views\KhachHangs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\KhachHangs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\KhachHangs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Phims\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Phims\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Phims\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Phims\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Phims\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
