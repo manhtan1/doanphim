@@ -142,5 +142,14 @@ namespace RapPhim2101.Controllers
         {
             return View(db.Phims.Find(id));
         }
+        public ActionResult Search()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Search(string searchFilm)
+        {
+            return RedirectToAction("Search", "Home", new { key = searchFilm });
+        }
     }
 }

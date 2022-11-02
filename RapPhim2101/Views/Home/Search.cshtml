@@ -1,0 +1,93 @@
+﻿@using RapPhim2101.Models
+
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string key = Request.QueryString["key"];
+    List<Phim> result = new List<Phim>();
+}
+<form name="Search" action="/Home/Search" method="post" class="mega-select pull-right">
+    <span class="mega-select__point">Search by</span>
+    <input name="searchFilm" type='text' class="select__field">
+    <button class="search" type="submit"><i class="fa fa-search"></i></button>
+</form>
+<div class="container" id="resturant">
+    @{
+        RapPhim2101.Models.DBContext db = new RapPhim2101.Models.DBContext();
+
+        var theloai = db.TheLoaiPhims.ToList();
+        if (string.IsNullOrEmpty(key))
+        {
+            <h3>Vui lòng nhập từ khóa cần tìm</h3>
+        }
+        else
+        {
+            if (key == "" || key.Length < 3)
+            {
+                <h3>Vui lòng nhập từ khóa cần tìm</h3>
+            }
+            else
+            {
+                result = new Phim().searchByKey(key);
+                <h2 style=" padding: 25px 0; color: red;">Kết quả tìm kiếm từ khóa "@key"</h2>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-8 col-md-9">
+                            @foreach (var i in result)
+                            {
+
+                            <div class="movie movie--test movie--test--dark movie--test--left">
+                                <div class="movie__images">
+                                    <a href="Home/ChiTietPhim/@i.MaPhim" class="movie-beta__link">
+                                        <img class="film-traller" alt='' src="@i.hinhtraller" />
+                                    </a>
+                                </div>
+                                <div class="movie__info">
+                                    <a href='movie-page-left.html' class="movie__title">@i.TenPhim  </a>
+
+                                    <p class="movie__time">@i.thoiluong</p>
+                                    @foreach (var tl in theloai)
+                                    {
+                                        if (tl.MaLP == i.MaLP)
+                                        {
+                                            <p class="movie__option">Thể Loại: @tl.LoaiPhim</p>
+
+                                        }
+
+                                    }
+
+                                    <div class="movie__rate">
+                                        <div class="score"></div>
+                                        <span class="movie__rating">4.1</span>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+
+            }
+        }
+
+    }
+</div>
+<style>
+    .margin-auto {
+        margin: -8px auto 8px;
+    }
+
+    .imgplaylist {
+        width: 100%;
+    }
+
+    .nameplaylist {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+</style>
+
+

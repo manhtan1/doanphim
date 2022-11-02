@@ -5,6 +5,7 @@ namespace RapPhim2101.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("Phim")]
     public partial class Phim
@@ -53,5 +54,11 @@ namespace RapPhim2101.Models
         public virtual DinhDangPhim DinhDangPhim { get; set; }
 
         public virtual TheLoaiPhim TheLoaiPhim { get; set; }
+        public List<Phim> searchByKey(string key)
+        {
+            DBContext db = new DBContext();
+            return db.Phims.SqlQuery("Select * from Phim where TenPhim like N'%" + key + "%' ").ToList();
+
+        }
     }
 }

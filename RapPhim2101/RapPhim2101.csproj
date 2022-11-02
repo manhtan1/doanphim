@@ -2233,6 +2233,7 @@
     <Content Include="Views\Home\DangKy.cshtml" />
     <Content Include="Views\Home\Dangnhap.cshtml" />
     <Content Include="Views\Home\ChitietPhim.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
