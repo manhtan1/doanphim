@@ -4410,7 +4410,10 @@ ul#navigation {
 
 .search {
     position: relative;
-    top: -10px;
+    top: 4px;
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 15%;
 }
 
     .search .search__field {
@@ -6032,7 +6035,7 @@ ul#navigation li.mega-menu__nav-item {
     }
 
 .mega-select .select__field {
-    width: 600px;
+    max-width: 200px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -10029,11 +10032,7 @@ ul.movie-beta__info{
         padding-left: 15px;
     }
 
-.movie--test {
-    width: 50%;
-    float: left;
-    margin-bottom: 8px;
-}
+
 
     .movie--test .movie__images {
         width: 39%;
@@ -10385,6 +10384,17 @@ ul.movie-beta__info{
     display: none;
 }
 
+@keyframes fadeIn {
+    from {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+}
 @media (min-width: 1930px) {
     .slide__video video {
         width: 2560px !important;

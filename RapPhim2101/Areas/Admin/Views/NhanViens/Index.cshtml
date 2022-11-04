@@ -27,12 +27,6 @@
             Phái
         </th>
         <th>
-            Lương
-        </th>
-        <th>
-            Ca
-        </th>
-        <th>
             Chức vụ
         </th>
         <th></th>
@@ -56,18 +50,12 @@
             @Html.DisplayFor(modelItem => item.Phai)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Luong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ca)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.ChucVu)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaNV }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaNV }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaNV })
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.MaNV }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaNV }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaNV })
         </td>
     </tr>
 }

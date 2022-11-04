@@ -5,30 +5,30 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Quản lý khách hàng</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tạo mới", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TenKH)
+            Họ tên
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SDTKH)
+            Số điện thoại
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DiaChi)
+            Địa chỉ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NgaySinh)
+            Ngày sinh
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.matkhau)
+            Mật khẩu
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.taikhoan)
+            Tài khoản
         </th>
         <th></th>
     </tr>
@@ -54,9 +54,9 @@
             @Html.DisplayFor(modelItem => item.taikhoan)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaKH }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaKH }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaKH })
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.MaKH }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaKH }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaKH })
         </td>
     </tr>
 }

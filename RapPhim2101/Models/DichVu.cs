@@ -16,7 +16,6 @@ namespace RapPhim2101.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaDV { get; set; }
 
         [StringLength(30)]

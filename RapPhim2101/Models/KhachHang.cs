@@ -12,6 +12,7 @@ namespace RapPhim2101.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KhachHang()
         {
+            CT_CMT = new HashSet<CT_CMT>();
             Hoadons = new HashSet<Hoadon>();
         }
 
@@ -36,6 +37,9 @@ namespace RapPhim2101.Models
         [Required]
         [StringLength(250)]
         public string taikhoan { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CT_CMT> CT_CMT { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hoadon> Hoadons { get; set; }

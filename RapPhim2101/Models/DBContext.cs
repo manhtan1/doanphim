@@ -14,6 +14,7 @@ namespace RapPhim2101.Models
 
         public virtual DbSet<ChiTietHD> ChiTietHDs { get; set; }
         public virtual DbSet<ChiTietPhong> ChiTietPhongs { get; set; }
+        public virtual DbSet<CT_CMT> CT_CMT { get; set; }
         public virtual DbSet<DichVu> DichVus { get; set; }
         public virtual DbSet<DinhDangPhim> DinhDangPhims { get; set; }
         public virtual DbSet<Hoadon> Hoadons { get; set; }
@@ -60,6 +61,11 @@ namespace RapPhim2101.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<KhachHang>()
+                .HasMany(e => e.CT_CMT)
+                .WithRequired(e => e.KhachHang)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<KhachHang>()
                 .HasMany(e => e.Hoadons)
                 .WithRequired(e => e.KhachHang)
                 .WillCascadeOnDelete(false);
@@ -80,6 +86,11 @@ namespace RapPhim2101.Models
 
             modelBuilder.Entity<Phim>()
                 .HasMany(e => e.ChiTietPhongs)
+                .WithRequired(e => e.Phim)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Phim>()
+                .HasMany(e => e.CT_CMT)
                 .WithRequired(e => e.Phim)
                 .WillCascadeOnDelete(false);
 

@@ -1,38 +1,32 @@
-﻿@using RapPhim2101.Models;
+﻿@using RapPhim2101.Models
 
 @{
-    ViewBag.Title = "phimsapchieu";
+    ViewBag.Title = "timkiemtheloai";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{
     RapPhim2101.Models.DBContext db = new RapPhim2101.Models.DBContext();
     var theloai = db.TheLoaiPhims.ToList();
-    var phimmoi = db.Phims.ToList();
-    var topphim = db.Phims.OrderByDescending(a => a.ThoigianChieu < DateTime.Now).Take(6).ToList();
 }
 <style>
-    .p30px{
-        padding:30px;
-    }
-    .mrlr5px{
-        margin:0 5px;
-    }
     .movie--test {
         width: 49%;
         float: left;
         margin: 0 5px 5px 5px;
     }
+    .p30px {
+        padding: 30px;
+    }
 </style>
-<div class="p30px col-sm-12">
+<div class=" p30px col-sm-12">
+    <h2 style=" color: red; text-align:center">Kết quả tìm kiếm:</h2>
 
     <div class="row">
-
         @foreach (var i in Model)
         {
-
-            <div class=" movie movie--test movie--test--dark movie--test--left">
+            <div class="movie movie--test movie--test--dark movie--test--left ml-5">
                 <div class="movie__images">
-                    <a href="movie-page-left.html" class="movie-beta__link">
+                    <a href="Home/ChiTietPhim/@i.MaPhim" class="movie-beta__link">
                         <img class="film-traller" alt='' src="@i.hinhtraller" />
                     </a>
                 </div>
@@ -57,6 +51,6 @@
                 </div>
             </div>
         }
+
     </div>
 </div>
-

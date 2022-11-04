@@ -16,10 +16,9 @@ namespace RapPhim2101.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaPhong { get; set; }
 
-        [StringLength(1)]
+        [StringLength(10)]
         public string TenPhong { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

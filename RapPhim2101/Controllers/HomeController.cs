@@ -1,41 +1,33 @@
-﻿using RapPhim2101.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
+using System.Web.Mvc;
+using RapPhim2101.Models;
+
 namespace RapPhim2101.Controllers
 {
     public class HomeController : Controller
     {
         private DBContext db = new DBContext();
-        public ActionResult Index(int ? page)
+        public ActionResult Index(int? page)
         {
             int pageSize = 6;
             int pageNum = (page ?? 1);
-            return View(db.Phims.OrderByDescending(n=>n.ThoigianChieu<DateTime.Now).ToList().ToPagedList(pageNum,pageSize));
-        }
-          
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return View(db.Phims.OrderByDescending(n => n.ThoigianChieu < DateTime.Now).ToList().ToPagedList(pageNum, pageSize));
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
+
+        [HttpGet]
         public ActionResult phimsapchieu()
         {
             return View(db.Phims.OrderByDescending(n => n.ThoigianChieu > DateTime.Now).ToList());
         }
+        [HttpGet]
         public ActionResult phimdangchieu()
         {
             return View(db.Phims.OrderByDescending(n => n.ThoigianChieu < DateTime.Now).ToList());
@@ -140,8 +132,14 @@ namespace RapPhim2101.Controllers
 
         public ActionResult ChitietPhim(int id)
         {
-            return View(db.Phims.Find(id));
+            Phim phim = db.Phims.Find(id);
+            if (phim == null)
+            {
+                return HttpNotFound();
+            }
+            return View(phim);
         }
+        [HttpGet]
         public ActionResult Search()
         {
             return View();
@@ -151,5 +149,16 @@ namespace RapPhim2101.Controllers
         {
             return RedirectToAction("Search", "Home", new { key = searchFilm });
         }
+        [HttpGet]
+        public ActionResult timkiemtheloai(int id)
+        {
+            
+            if (db.Phims.Where(n => n.MaLP == id).ToList() == null)
+            {
+                return HttpNotFound();
+            }
+            return View(db.Phims.Where(n => n.MaLP == id).ToList());
+        }
+        
     }
 }

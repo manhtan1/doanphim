@@ -179,7 +179,6 @@ C:\Users\nobod\Desktop\doanphim\RapPhim2101\obj\Debug\RapPhim2101.csproj.CoreCom
 C:\Users\nobod\Desktop\doanphim\RapPhim2101\obj\Debug\RapPhim2101.csproj.CopyComplete
 C:\Users\nobod\Desktop\doanphim\RapPhim2101\obj\Debug\RapPhim2101.dll
 C:\Users\nobod\Desktop\doanphim\RapPhim2101\obj\Debug\RapPhim2101.pdb
-C:\chuyennganh\RapPhim2101\obj\Debug\RapPhim2101.csproj.AssemblyReference.cache
 C:\chuyennganh\RapPhim2101\obj\Debug\RapPhim2101.csproj.CoreCompileInputs.cache
 C:\chuyennganh\RapPhim2101\obj\Debug\RapPhim2101.dll
 C:\chuyennganh\RapPhim2101\obj\Debug\RapPhim2101.pdb
@@ -269,3 +268,4 @@ C:\chuyennganh\RapPhim2101\bin\System.Web.WebPages.Razor.xml
 C:\chuyennganh\RapPhim2101\bin\Newtonsoft.Json.xml
 C:\chuyennganh\RapPhim2101\bin\Antlr3.Runtime.pdb
 C:\chuyennganh\RapPhim2101\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\chuyennganh\RapPhim2101\obj\Debug\RapPhim2101.csproj.CopyComplete

@@ -3,9 +3,10 @@
     "",
     "\\RapPhim2101",
     "\\RapPhim2101\\Controllers",
+    "\\RapPhim2101\\Models",
     "\\RapPhim2101\\Views",
     "\\RapPhim2101\\Views\\Home"
   ],
-  "SelectedNode": "\\RapPhim2101\\Views\\Home\\ChitietPhim.cshtml",
+  "SelectedNode": "\\RapPhim2101\\Models\\Phim.cs",
   "PreviewInSolutionExplorer": false
 }
