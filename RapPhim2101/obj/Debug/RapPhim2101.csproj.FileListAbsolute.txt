@@ -268,4 +268,4 @@ C:\chuyennganh\RapPhim2101\bin\System.Web.WebPages.Razor.xml
 C:\chuyennganh\RapPhim2101\bin\Newtonsoft.Json.xml
 C:\chuyennganh\RapPhim2101\bin\Antlr3.Runtime.pdb
 C:\chuyennganh\RapPhim2101\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\chuyennganh\RapPhim2101\obj\Debug\RapPhim2101.csproj.CopyComplete
+C:\chuyennganh\RapPhim2101\obj\Debug\RapPhim2101.csproj.AssemblyReference.cache

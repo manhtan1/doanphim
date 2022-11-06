@@ -159,6 +159,30 @@ namespace RapPhim2101.Controllers
             }
             return View(db.Phims.Where(n => n.MaLP == id).ToList());
         }
-        
+        public ActionResult Cmt(int idphim, FormCollection collection)
+        {
+            var cmt = collection["cmt"];
+            KhachHang kh = (KhachHang)Session["TaiKhoan"];
+            List<Phim> phim = new List<Phim>();
+            Phim p = phim.SingleOrDefault(n => n.MaPhim == idphim);
+
+
+
+            if (string.IsNullOrEmpty(cmt))
+            {
+                ViewData["Loi"] = "Bạn chưa nhập Comment";
+            }
+            CT_CMT cm = new CT_CMT();
+
+            cm.MaPhim = idphim;
+            cm.MaKH = kh.MaKH;
+            cm.comment = cmt;
+            cm.ngaycmt = DateTime.Now;
+            db.CT_CMT.Add(cm);
+            db.SaveChanges();
+            //return RedirectToAction("DetailsMusic", "Home", idbaihat);
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }

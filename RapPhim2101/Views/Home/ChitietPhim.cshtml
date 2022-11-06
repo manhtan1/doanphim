@@ -10,6 +10,28 @@
     .movie__describe {
         color: #fff;
     }
+    .cmt_form {
+        width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        
+    }
+    .comment-sets{
+        display:inline-block;
+    }
+    .cmt_submit {
+        float: right;
+        margin-top: 20px;
+    }
+    .comment__message{
+        color:#fff;
+    }
+    .comment__author{
+        color:#fe505a;
+    }
+    .comment__images{
+        margin-bottom:5px;
+    }
 </style>
 <section class="container">
     <div class="col-sm-12">
@@ -76,87 +98,64 @@
             <h2 class="page-heading">comments (15)</h2>
 
             <div class="comment-wrapper">
-                <form id="comment-form" class="comment-form" method='post'>
-                    <textarea class="comment-form__text" placeholder='Add you comment here'></textarea>
-                    <label class="comment-form__info">250 characters left</label>
-                    <button type='submit' class="btn btn-md btn--danger comment-form__btn">add comment</button>
-                </form>
+                @{
+                    var session = (RapPhim2101.Models.KhachHang)Session["TaiKhoan"];
+                    RapPhim2101.Models.DBContext db = new RapPhim2101.Models.DBContext();
+                    var cmt = db.CT_CMT.ToList();
+                }
+                @if (session != null)
+                {
+                    using (Html.BeginForm("Cmt", "Home", new { @id = "comment-form", @class = "comment-form", @idphim = @Model.MaPhim }))
+                    {
+                        @ViewData["Loi"]
+                        @Html.TextBox("cmt", "", new { @class = "cmt_form", placeholder = "Thêm bình luận mới" })
+                        <input value="add comment" class="btn btn-md btn--danger comment-form__btn cmt_submit" type="submit"></input>
+                    }
+                }
+                @*else
+                {
+                    <div></div>
+                }*@
+            <div class="comment-sets">
 
-                <div class="comment-sets">
-
-                    <div class="comment">
-                        <div class="comment__images">
-                            <img alt='' src="http://placehold.it/50x50">
-                        </div>
-
-                        <a href='#' class="comment__author"><span class="social-used fa fa-facebook"></span>Roberta Inetti</a>
-                        <p class="comment__date">today | 03:04</p>
-                        <p class="comment__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae enim sollicitudin, euismod erat id, fringilla lacus. Cras ut rutrum lectus. Etiam ante justo, volutpat at viverra a, mattis in velit. Morbi molestie rhoncus enim, vitae sagittis dolor tristique et.</p>
-                        <a href='#' class="comment__reply">Reply</a>
+                <div class="comment">
+                    <div class="comment__images">
+                        <img alt='' src="http://placehold.it/50x50">
                     </div>
 
-                    <div class="comment">
-                        <div class="comment__images">
-                            <img alt='' src="http://placehold.it/50x50">
-                        </div>
-
-                        <a href='#' class="comment__author"><span class="social-used fa fa-vk"></span>Olia Gozha</a>
-                        <p class="comment__date">22.10.2013 | 14:40</p>
-                        <p class="comment__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae enim sollicitudin, euismod erat id, fringilla lacus. Cras ut rutrum lectus. Etiam ante justo, volutpat at viverra a, mattis in velit. Morbi molestie rhoncus enim, vitae sagittis dolor tristique et.</p>
-                        <a href='#' class="comment__reply">Reply</a>
-                    </div>
-
-                    <div class="comment comment--answer">
-                        <div class="comment__images">
-                            <img alt='' src="http://placehold.it/50x50">
-                        </div>
-
-                        <a href='#' class="comment__author"><span class="social-used fa fa-vk"></span>Dmitriy Pustovalov</a>
-                        <p class="comment__date">today | 10:19</p>
-                        <p class="comment__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae enim sollicitudin, euismod erat id, fringilla lacus. Cras ut rutrum lectus. Etiam ante justo, volutpat at viverra a, mattis in velit. Morbi molestie rhoncus enim, vitae sagittis dolor tristique et.</p>
-                        <a href='#' class="comment__reply">Reply</a>
-                    </div>
-
-                    <div class="comment comment--last">
-                        <div class="comment__images">
-                            <img alt='' src="http://placehold.it/50x50">
-                        </div>
-
-                        <a href='#' class="comment__author"><span class="social-used fa fa-facebook"></span>Sia Andrews</a>
-                        <p class="comment__date"> 22.10.2013 | 12:31 </p>
-                        <p class="comment__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae enim sollicitudin, euismod erat id, fringilla lacus. Cras ut rutrum lectus. Etiam ante justo, volutpat at viverra a, mattis in velit. Morbi molestie rhoncus enim, vitae sagittis dolor tristique et.</p>
-                        <a href='#' class="comment__reply">Reply</a>
-                    </div>
-
-                    <div id='hide-comments' class="hide-comments">
-                        <div class="comment">
-                            <div class="comment__images">
-                                <img alt='' src="http://placehold.it/50x50">
-                            </div>
-
-                            <a href='#' class="comment__author"><span class="social-used fa fa-facebook"></span>Roberta Inetti</a>
-                            <p class="comment__date">today | 03:04</p>
-                            <p class="comment__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae enim sollicitudin, euismod erat id, fringilla lacus. Cras ut rutrum lectus. Etiam ante justo, volutpat at viverra a, mattis in velit. Morbi molestie rhoncus enim, vitae sagittis dolor tristique et.</p>
-                            <a href='#' class="comment__reply">Reply</a>
-                        </div>
-
-                        <div class="comment">
-                            <div class="comment__images">
-                                <img alt='' src="http://placehold.it/50x50">
-                            </div>
-
-                            <a href='#' class="comment__author"><span class="social-used fa fa-vk"></span>Olia Gozha</a>
-                            <p class="comment__date">22.10.2013 | 14:40</p>
-                            <p class="comment__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae enim sollicitudin, euismod erat id, fringilla lacus. Cras ut rutrum lectus. Etiam ante justo, volutpat at viverra a, mattis in velit. Morbi molestie rhoncus enim, vitae sagittis dolor tristique et.</p>
-                            <a href='#' class="comment__reply">Reply</a>
-                        </div>
-                    </div>
-
-                    <div class="comment-more">
-                        <a href="#" class="watchlist">Show more comments</a>
-                    </div>
-
+                    <a href='#' class="comment__author"><span class="social-used fa fa-facebook"></span>Roberta Inetti</a>
+                    <p class="comment__date">today | 03:04</p>
+                    <p class="comment__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae enim sollicitudin, euismod erat id, fringilla lacus. Cras ut rutrum lectus. Etiam ante justo, volutpat at viverra a, mattis in velit. Morbi molestie rhoncus enim, vitae sagittis dolor tristique et.</p>
+                    <a href='#' class="comment__reply">Reply</a>
                 </div>
+                @foreach (var bl in cmt)
+                {
+                    if (Model.MaPhim == bl.MaPhim)
+                    {
+                        <div class="comment">
+                            <div class="comment__images">
+                                <img alt='' width="50px" src="https://i.pinimg.com/236x/1b/93/75/1b93750b690e3f49820c460948a937e9.jpg">
+                            </div>
+
+                            <a href='#' class="comment__author"><span class="social-used fa fa-vk"></span>@bl.KhachHang.TenKH</a>
+                            <p class="comment__date">@bl.ngaycmt</p>
+                            <p class="comment__message">@bl.comment</p>
+                            <a href='#' class="comment__reply">Reply</a>
+                        </div>
+                    }
+                    else
+                    {
+                        if (cmt.Count == 0)
+                        {
+                            <div class="none-user">
+                                <span>Không có lượt bình luận</span>
+                            </div>
+                        }
+                    }
+                }
+
+
+            </div>
             </div>
         </div>
     </div>
