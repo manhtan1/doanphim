@@ -15,6 +15,7 @@ namespace RapPhim2101.Models
         {
             ChiTietPhongs = new HashSet<ChiTietPhong>();
             CT_CMT = new HashSet<CT_CMT>();
+            KhachHangs = new HashSet<KhachHang>();
         }
 
         [Key]
@@ -58,6 +59,9 @@ namespace RapPhim2101.Models
         public virtual DinhDangPhim DinhDangPhim { get; set; }
 
         public virtual TheLoaiPhim TheLoaiPhim { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KhachHang> KhachHangs { get; set; }
         public List<Phim> searchByKey(string key)
         {
             DBContext db = new DBContext();

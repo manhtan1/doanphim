@@ -14,6 +14,7 @@ namespace RapPhim2101.Models
         {
             CT_CMT = new HashSet<CT_CMT>();
             Hoadons = new HashSet<Hoadon>();
+            Phims = new HashSet<Phim>();
         }
 
         [Key]
@@ -43,5 +44,8 @@ namespace RapPhim2101.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hoadon> Hoadons { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Phim> Phims { get; set; }
     }
 }

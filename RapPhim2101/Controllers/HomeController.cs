@@ -19,18 +19,18 @@ namespace RapPhim2101.Controllers
             int pageNum = (page ?? 1);
             return View(db.Phims.OrderByDescending(n => n.ThoigianChieu < DateTime.Now).ToList().ToPagedList(pageNum, pageSize));
         }
-
+        
 
 
         [HttpGet]
         public ActionResult phimsapchieu()
         {
-            return View(db.Phims.OrderByDescending(n => n.ThoigianChieu > DateTime.Now).ToList());
+            return View(db.Phims.Where(n => n.ThoigianChieu > DateTime.Now).ToList());
         }
         [HttpGet]
         public ActionResult phimdangchieu()
         {
-            return View(db.Phims.OrderByDescending(n => n.ThoigianChieu < DateTime.Now).ToList());
+            return View(db.Phims.Where(n => n.ThoigianChieu < DateTime.Now).ToList());
         }
         [HttpGet]
         public ActionResult DangKy()
@@ -183,6 +183,13 @@ namespace RapPhim2101.Controllers
             //return RedirectToAction("DetailsMusic", "Home", idbaihat);
             return RedirectToAction("Index", "Home");
         }
+        /*[HttpPost]
+        public ActionResult TheoDoiPhim(int n)
+        {
+            
+            KhachHang kh = (KhachHang)Session["TaiKhoan"];
+            
+        }*/
 
     }
 }

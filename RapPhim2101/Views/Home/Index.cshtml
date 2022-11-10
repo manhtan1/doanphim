@@ -7,68 +7,6 @@
 }
 <link href="~/Content/style.css" rel="stylesheet" />
 <style>
-    .custom-select {
-        position: relative;
-        font-family: Arial;
-    }
-
-        .custom-select select {
-            display: none; /*hide original SELECT element:*/
-        }
-
-    .select-selected {
-        background-color: DodgerBlue;
-    }
-
-        /*style the arrow inside the select element:*/
-        .select-selected:after {
-            position: absolute;
-            content: "";
-            top: 14px;
-            right: 10px;
-            width: 0;
-            height: 0;
-            border: 6px solid transparent;
-            border-color: #fff transparent transparent transparent;
-        }
-
-        /*point the arrow upwards when the select box is open (active):*/
-        .select-selected.select-arrow-active:after {
-            border-color: transparent transparent #fff transparent;
-            top: 7px;
-        }
-
-    /*style the items (options), including the selected item:*/
-    .select-items div, .select-selected {
-        color: #ffffff;
-        padding: 8px 16px;
-        border: 1px solid transparent;
-        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-        cursor: pointer;
-        user-select: none;
-    }
-
-    /*style items (options):*/
-    .select-items {
-        position: absolute;
-        background-color: DodgerBlue;
-        top: 100%;
-        left: 0;
-        right: 0;
-        z-index: 99;
-    }
-
-
-
-    /*hide the items when the select box is closed:*/
-    .select-hide {
-        display: none;
-    }
-
-    .select-items div:hover, .same-as-selected {
-        background-color: rgba(0, 0, 0, 0.1);
-    }
-
     div.movie .movie--test,
     img.film-traller {
         height: 200px;
@@ -130,11 +68,14 @@
     .theloai_item {
         background: #fff;
         width: 100px;
+        height:100px;
+        overflow-y:auto;
         position: absolute;
         z-index: 111111;
         border-radius: 5px;
         margin: 0;
-        animation: fadeIn linear 0.2s;
+        display:none;
+        animation: fadeIn linear 0.3s;
     }
 
         .theloai_item li {
@@ -147,9 +88,14 @@
         cursor:pointer;
     }
 
-        .title_tl:hover .theloai_item {
-            display: block;
-        }
+    .theloai_hover:hover .theloai_item {
+        display: block;
+    }
+    .movie--test {
+        width: 49%;
+        float: left;
+        margin: 0 3px 3px;
+    }
 </style>
 
 @*<div class="bannercontainer">
@@ -175,7 +121,7 @@
             {
 
                 <div class="movie-beta__item ">
-                    <img alt='' src="@item.hinhtraller" />
+                    <img src="@item.hinhtraller" alt=''  />
                     <span class="best-rate">5.0</span>
                     @foreach (var i in theloai)
                     {
@@ -205,7 +151,7 @@
 
     <span class="dplay-block page-heading heading--outcontainer">Search by</span>
     <div class="form_search">
-        <div style="width:200px;">
+        <div class="theloai_hover" style="width:200px;">
             <label class="title_tl" style="color:#f5f5f5">Thể loại</label>
             <ul class="theloai_item">
                 @foreach (var i in theloai)
@@ -216,13 +162,12 @@
         </div>
         <div>
             <form name="Search" action="/Home/Search" method="post" class="mega-select">
-                <input name="searchFilm" type='text' class="select__field">
+                <input name="searchFilm" type='text' placeholder="nhập phim cần tìm" class="select__field">
                 <button class="search" type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
     </div>
     <h2 id='target' class="page-heading heading--outcontainer">Now in the cinema</h2>
-
     <div class="col-sm-12">
         <div class="row">
             <div class="col-sm-8 col-md-9">
@@ -231,13 +176,12 @@
                 }
                 @foreach (var i in Model)
                 {
-
                     if ((so == 1 || so == 4 || so == 5))
                     {
                         <div class="movie movie--test movie--test--dark movie--test--left">
                             <div class="movie__images">
                                 <a href="Home/ChiTietPhim/@i.MaPhim" class="movie-beta__link">
-                                    <img class="film-traller" alt='' src="@i.hinhtraller" />
+                                    <img src="@i.hinhtraller" class="film-traller" alt=''  />
                                 </a>
                             </div>
                             <div class="movie__info">
@@ -266,7 +210,7 @@
                         <div class="movie movie--test movie--test--light movie--test--left">
                             <div class="movie__images">
                                 <a href="Home/ChiTietPhim/@i.MaPhim" class="movie-beta__link">
-                                    <img class="film-traller" alt='' src="@i.hinhtraller" />
+                                    <img src="@i.hinhtraller" class="film-traller" alt=''  />
                                 </a>
                             </div>
                             <div class="movie__info">
@@ -307,7 +251,7 @@
                                         <li class="movie  store-variant">
                                             <a href="Home/ChiTietPhim/@i.MaPhim">
                                                 <div class="desc_movie">
-                                                    <img class="hinhtraller" alt='banner' src="@i.hinhtraller" />
+                                                    <img  src="@i.hinhtraller"  class="hinhtraller" alt='banner'/>
                                                     <div class="movie_watch">
                                                         <span>@i.TenPhim</span>
                                                         <p>@i.ThoigianChieu</p>

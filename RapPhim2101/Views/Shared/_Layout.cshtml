@@ -5,20 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/animate.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/font-awesome.css" rel="stylesheet" />
-    <link href="~/Content/gozha-nav.css" rel="stylesheet" />
-    <link href="~/Content/login.css" rel="stylesheet" />
-    <link href="~/Content/PagedList.css" rel="stylesheet" />
-    <link href="~/Content/responsive.css" rel="stylesheet" />
-    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="~/Content/gozha-nav.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="~/Content/login.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="~/Content/responsive.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" media="screen" />
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" media="screen" />
     <!-- Roboto -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css' media="screen" />
     <!-- Open Sans -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800italic' rel='stylesheet' type='text/css' media="screen" />
 
 </head>
 <body>
@@ -26,7 +26,7 @@
         <header class="header-wrapper header-wrapper--home">
             <div class="container">
                 <a href='index' class="logo">
-                    <img src="~/img/logohutech.png" alt="logo" />
+                    <img src="~/Images/logohutech.png" alt="logo" />
                 </a>
 
                 <nav id="navigation-box">
@@ -108,7 +108,7 @@
                         {
                             <div class="auth__show">
                                 <span class="auth__image">
-                                    <img src="~/img/logohutech.png" alt="logo" />
+                                    <img src="~/Images/logohutech.png" alt="logo" />
                                 </span>
                             </div>
                             <a href="/Home/DangKy" class="btn btn--sign btn--singin">
@@ -131,7 +131,7 @@
         </header>
         <div class="bannercontainer">
             <div class="banner">
-                <img alt='' src="~/img/rapphim.png" />
+                <img alt='' src="~/Images/rapphim.png" />
             </div>
         </div>
 
@@ -183,5 +183,7 @@
         </footer>
     </div>
     @RenderSection("scripts", required: false)
+
+
 </body>
 </html>

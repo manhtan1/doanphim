@@ -70,6 +70,11 @@ namespace RapPhim2101.Models
                 .WithRequired(e => e.KhachHang)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<KhachHang>()
+                .HasMany(e => e.Phims)
+                .WithMany(e => e.KhachHangs)
+                .Map(m => m.ToTable("Phim_Theo_Doi").MapLeftKey("MaKH").MapRightKey("MaPhim"));
+
             modelBuilder.Entity<LoaiVe>()
                 .HasMany(e => e.Ves)
                 .WithRequired(e => e.LoaiVe)
