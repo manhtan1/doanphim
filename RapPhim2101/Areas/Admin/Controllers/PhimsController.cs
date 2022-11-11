@@ -5,6 +5,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using PagedList;
+using PagedList.Mvc;
 using System.Web.Mvc;
 using RapPhim2101.Models;
 
@@ -14,12 +16,15 @@ namespace RapPhim2101.Areas.Admin.Controllers
     {
         private DBContext db = new DBContext();
 
-        // GET: Admin/Phims
-        public ActionResult Index()
+
+        public ActionResult Index(int? page)
         {
+            int pageSize = 10;
+            int pageNum = (page ?? 1);
             var phims = db.Phims.Include(p => p.DinhDangPhim).Include(p => p.TheLoaiPhim);
-            return View(phims.ToList());
+            return View(phims.ToList().ToPagedList(pageNum, pageSize));
         }
+       
 
         // GET: Admin/Phims/Details/5
         public ActionResult Details(int? id)

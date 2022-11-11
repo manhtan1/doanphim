@@ -48,6 +48,8 @@ namespace RapPhim2101.Models
 
         public DateTime? ThoigianChieu { get; set; }
 
+        public DateTime?  ThoiGianKetThuc { get; set; }
+
         public int? luotxem { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
