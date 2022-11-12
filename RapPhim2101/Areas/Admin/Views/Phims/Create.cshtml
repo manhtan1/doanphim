@@ -7,10 +7,10 @@
 
 <h2>Tạo mới</h2>
 
-@using (Html.BeginForm()) 
+@*@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Phim</h4>
         <hr />
@@ -101,8 +101,13 @@
             </div>
         </div>
     </div>
-}
+}*@
 
+@using (Html.BeginForm("ImportFilms", "Phims", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="postedFile" style="border:1px solid #ccc;display:inline-block;padding:6px 12px;cursor:pointer" />
+    <input type="submit" value="Import" class="btn btn-primary" />
+}
 <div>
     @Html.ActionLink("Trở về", "Index")
 </div>
