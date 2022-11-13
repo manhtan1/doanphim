@@ -1,0 +1,18 @@
+﻿@using RapPhim2101.Models
+@model List<GioHangItem>
+@{
+    ViewBag.Title = "test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div class="text-center" style="color:#fff !important">
+        
+            <span>@item.MaPhim</span>
+            <br />   
+            <span>@string.Format("{0:0,0}", item.dthanhtien) VND</span>
+            <br />
+            <span>Ghế ngồi: @item.Ghe </span>
+    </div>
+}

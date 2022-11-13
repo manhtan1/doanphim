@@ -150,6 +150,7 @@
     <Compile Include="Areas\Admin\Controllers\PhimsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Controllers\DatVeController.cs" />
+    <Compile Include="Models\GioHangItem.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2172,10 +2173,12 @@
     <Content Include="Views\Home\timkiemtheloai.cshtml" />
     <Content Include="Views\Home\test.cshtml" />
     <Content Include="Views\Home\phimdangchieu.cshtml" />
+    <Content Include="Views\DatVe\TrangDatVe.cshtml" />
+    <Content Include="Views\DatVe\test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\DatVe\" />
+    <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

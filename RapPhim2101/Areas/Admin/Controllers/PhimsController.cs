@@ -28,7 +28,7 @@ namespace RapPhim2101.Areas.Admin.Controllers
             var phims = db.Phims.Include(p => p.DinhDangPhim).Include(p => p.TheLoaiPhim);
             return View(phims.ToList().ToPagedList(pageNum, pageSize));
         }
-       
+
 
         // GET: Admin/Phims/Details/5
         public ActionResult Details(int? id)
@@ -53,7 +53,7 @@ namespace RapPhim2101.Areas.Admin.Controllers
             return View();
         }
 
-        
+
 
         public ActionResult Edit(int? id)
         {
@@ -138,7 +138,9 @@ namespace RapPhim2101.Areas.Admin.Controllers
                         Directory.CreateDirectory(path);
                     }
 
+                    //filePath = path + Path.GetFileName(postedFile.FileName);
                     filePath = path + Path.GetFileName(postedFile.FileName);
+
                     string extension = Path.GetExtension(postedFile.FileName);
                     postedFile.SaveAs(filePath);
 
@@ -181,7 +183,7 @@ namespace RapPhim2101.Areas.Admin.Controllers
                     {
                         using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
                         {
-                            sqlBulkCopy.DestinationTableName = "dbo.[Phim]";
+                            sqlBulkCopy.DestinationTableName = "[dbo].[Phim]";
                             sqlBulkCopy.ColumnMappings.Add("MaPhim", "MaPhim");
                             sqlBulkCopy.ColumnMappings.Add("MaDP", "MaDP");
                             sqlBulkCopy.ColumnMappings.Add("TenPhim", "TenPhim");
