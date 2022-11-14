@@ -11,13 +11,10 @@ namespace RapPhim2101.Controllers
     {
         // GET: DatVe
         private DBContext db = new DBContext();
-
         public ActionResult TrangDatVe(int id)
         {
             /*List<GioHangItem> lstgiohang = Laygiohang();
-            GioHangItem product = lstgiohang.Find(n => n.MaPhim == id);
-            ViewBag.tongtien = Tongtien();*/
-            ViewBag.tongtien = Tongtien();
+            GioHangItem product = lstgiohang.Find(n => n.MaPhim == id);*/
             Phim phim = db.Phims.Find(id);
             if (phim == null)
             {
@@ -32,8 +29,6 @@ namespace RapPhim2101.Controllers
         public ActionResult test()
         {
             List<GioHangItem> lstgiohang = Laygiohang();
-            ViewBag.tongtien = Tongtien();
-
             if (lstgiohang.Count == 0)
             {
                 return RedirectToAction("Index", "Home");
@@ -52,27 +47,25 @@ namespace RapPhim2101.Controllers
         }
         public ActionResult Themgiohang(int MaPhim,string ghe, string strURL)
         {
-            //
             List<GioHangItem> lstgiohang = Laygiohang();
             GioHangItem product = lstgiohang.Find(n => n.MaPhim == MaPhim);
+            var site = ghe;
             if (product == null)
             {
                 product = new GioHangItem(MaPhim);
+                product.Ghe = site;
                 lstgiohang.Add(product);
-
-
                 return Redirect(strURL);
-
             }
             else
             {
-                product.Ghe = ghe;
+                product.Ghe= product.Ghe + ", "+ site;
                 product.SoLuong += 1;
                 lstgiohang.Add(product);
                 return Redirect(strURL);
             }
         }
-        private double Tongtien()
+        /*private double Tongtien()
         {
             double total = 0;
             List<GioHangItem> lstgiohang = Session["GioHang"] as List<GioHangItem>;
@@ -81,6 +74,6 @@ namespace RapPhim2101.Controllers
                 total = lstgiohang.Sum(n => n.dthanhtien);
             }
             return total;
-        }
+        }*/
     }
 }

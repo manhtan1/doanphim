@@ -14,7 +14,6 @@ namespace RapPhim2101.Models
         public int MaPhong { get; set; }
         public DateTime SuatChieu { get; set; }
         public string Ghe { get; set; }
-        public string TongTien { get; set; }
         public int SoLuong { get; set; }
         public double dthanhtien
         {
@@ -28,6 +27,7 @@ namespace RapPhim2101.Models
             SuatChieu = (DateTime)phong.SuatChieu;
             Ghe = "";
             SoLuong = 1;
+            
         }
     }
 }
