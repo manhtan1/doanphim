@@ -359,7 +359,6 @@ C:\doanphim\RapPhim2101\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.x
 C:\doanphim\RapPhim2101\obj\Debug\RapPhim2101.csproj.CoreCompileInputs.cache
 C:\doanphim\RapPhim2101\obj\Debug\RapPhim2101.dll
 C:\doanphim\RapPhim2101\obj\Debug\RapPhim2101.pdb
-C:\doanphim\RapPhim2101\obj\Debug\RapPhim2101.csproj.CopyComplete
 C:\Users\ADMIN\Desktop\doanphim\RapPhim2101\bin\RapPhim2101.dll.config
 C:\Users\ADMIN\Desktop\doanphim\RapPhim2101\bin\RapPhim2101.dll
 C:\Users\ADMIN\Desktop\doanphim\RapPhim2101\bin\RapPhim2101.pdb
@@ -450,3 +449,4 @@ C:\Users\ADMIN\Desktop\doanphim\RapPhim2101\obj\Debug\RapPhim2101.csproj.Assembl
 C:\Users\ADMIN\Desktop\doanphim\RapPhim2101\obj\Debug\RapPhim2101.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\Desktop\doanphim\RapPhim2101\obj\Debug\RapPhim2101.dll
 C:\Users\ADMIN\Desktop\doanphim\RapPhim2101\obj\Debug\RapPhim2101.pdb
+C:\doanphim\RapPhim2101\obj\Debug\RapPhim2101.csproj.AssemblyReference.cache

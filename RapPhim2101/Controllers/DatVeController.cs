@@ -20,10 +20,10 @@ namespace RapPhim2101.Controllers
             {
                 return HttpNotFound();
             }
-            /*if (Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
+            if (Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
             {
                 return RedirectToAction("DangNhap", "Home");
-            }*/
+            }
             return View(phim);
         }
         public ActionResult test()
@@ -64,6 +64,51 @@ namespace RapPhim2101.Controllers
                 lstgiohang.Add(product);
                 return Redirect(strURL);
             }
+        }
+        [HttpGet]
+        public ActionResult Datve(int? id)
+        {
+            List<GioHangItem> lstgiohang = Session["GioHang"] as List<GioHangItem>;
+            GioHangItem gh = lstgiohang.Find(n => n.MaPhim == id);
+            
+
+            return View(gh);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Datve(int id)
+        {
+            List<GioHangItem> lstgiohang = Session["GioHang"] as List<GioHangItem>;
+            var session = (KhachHang)Session["TaiKhoan"];
+            GioHangItem gh = lstgiohang.Find(n => n.MaPhim == id);
+            Ve ve = new Ve();
+            ve.MaPhim = gh.MaPhim;
+            ve.MaPhong = gh.MaPhong;
+            db.Ves.Add(ve);
+            db.SaveChanges();
+            Hoadon hd = new Hoadon();
+            hd.MaKH = session.MaKH;
+            hd.TongTien = gh.dthanhtien;
+            hd.MaNV = 1;
+            db.Hoadons.Add(hd);
+            db.SaveChanges();
+            foreach (var item in db.Hoadons.ToList())
+            {
+                foreach(var v in db.Ves.ToList()) {
+                    ChiTietHD cthd = new ChiTietHD();
+                    cthd.MaHD = item.MaHD;
+                    cthd.MaVe = v.MaVe;
+                    cthd.MaUD = 1;
+                    cthd.MaDV = 1;
+                    cthd.Ghe = gh.Ghe;
+                    cthd.SoLuong = gh.SoLuong;
+                    cthd.NgayBanVe= DateTime.Now;
+                    db.ChiTietHDs.Add(cthd);
+                    
+                }
+            }
+            db.SaveChanges();
+            return RedirectToAction("index", "home");
         }
         /*private double Tongtien()
         {

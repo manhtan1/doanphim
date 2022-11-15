@@ -453,17 +453,18 @@
                     Ghế ngồi: <span class="btn--danger">@gh.Ghe</span>
                 </div>
                 <hr class="bg-gray-400" style="height: 1px;">
-                <button class="buy_tickets">Đặt vé</button>
+                <button class="buy_tickets"><a href="/DatVe/Datve/@Model.MaPhim">Đặt vé</a></button>
             }
         </div>
     </section>
 
 </div>
 <script>
+    
     const Idfilm = document.querySelector(".id_phim");
     const Place = document.querySelectorAll(".sits__place");
     var x = location.href;
-
+    
     for (const item of Place) {
         item.addEventListener("click", function () {
             location.href = '@Url.Action("Themgiohang", "Datve")?MaPhim=' + Idfilm.dataset.film + '&ghe=' + item.dataset.place + '&strURL=' + x;

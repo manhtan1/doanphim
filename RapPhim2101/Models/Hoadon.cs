@@ -15,8 +15,7 @@ namespace RapPhim2101.Models
             ChiTietHDs = new HashSet<ChiTietHD>();
         }
 
-        [StringLength(1)]
-        public string TongTien { get; set; }
+        public double TongTien { get; set; }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
