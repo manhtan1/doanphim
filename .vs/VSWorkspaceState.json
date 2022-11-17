@@ -2,11 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\RapPhim2101",
-    "\\RapPhim2101\\Controllers",
-    "\\RapPhim2101\\Models",
-    "\\RapPhim2101\\Views",
-    "\\RapPhim2101\\Views\\Home"
+    "\\RapPhim2101\\App_Start"
   ],
-  "SelectedNode": "\\RapPhim2101\\Models\\Phim.cs",
+  "SelectedNode": "\\RapPhim2101\\App_Start\\RouteConfig.cs",
   "PreviewInSolutionExplorer": false
 }

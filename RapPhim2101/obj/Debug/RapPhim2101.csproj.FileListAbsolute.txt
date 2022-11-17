@@ -450,3 +450,7 @@ C:\Users\ADMIN\Desktop\doanphim\RapPhim2101\obj\Debug\RapPhim2101.csproj.CoreCom
 C:\Users\ADMIN\Desktop\doanphim\RapPhim2101\obj\Debug\RapPhim2101.dll
 C:\Users\ADMIN\Desktop\doanphim\RapPhim2101\obj\Debug\RapPhim2101.pdb
 C:\doanphim\RapPhim2101\obj\Debug\RapPhim2101.csproj.AssemblyReference.cache
+C:\Users\nobod\Desktop\doanphimmm\RapPhim2101\obj\Debug\RapPhim2101.csproj.AssemblyReference.cache
+C:\Users\nobod\Desktop\doanphimmm\RapPhim2101\obj\Debug\RapPhim2101.csproj.CoreCompileInputs.cache
+C:\Users\nobod\Desktop\doanphimmm\RapPhim2101\obj\Debug\RapPhim2101.dll
+C:\Users\nobod\Desktop\doanphimmm\RapPhim2101\obj\Debug\RapPhim2101.pdb
